@@ -1,33 +1,55 @@
-apply plugin: 'com.android.application'
+apply plugin: "com.android.application"
 
-apply plugin: 'kotlin-android'
+apply plugin: "kotlin-android"
 
-apply plugin: 'kotlin-android-extensions'
+apply plugin: "kotlin-android-extensions"
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion compile_sdk_version
+    buildToolsVersion build_tools_version
+
     defaultConfig {
         applicationId "claims.terra.terradroid"
-        minSdkVersion 19
-        targetSdkVersion 26
+
+        minSdkVersion min_sdk_version
+        targetSdkVersion target_sdk_version
+
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
+
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        multiDexEnabled true
     }
+
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
+    }
+
+    dexOptions {
+        jumboMode true
     }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
-    implementation 'com.android.support:appcompat-v7:26.1.0'
-    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.1'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    implementation "com.android.support:appcompat-v7:$support_lib_version"
+
+    implementation "com.android.support:recyclerview-v7:$support_lib_version"
+    implementation "com.android.support:appcompat-v7:$support_lib_version"
+    implementation "com.android.support:support-v4:$support_lib_version"
+    implementation "com.android.support:design:$support_lib_version"
+
+    implementation "org.osmdroid:osmdroid-android:$osm_base_version@aar"
+    implementation "com.github.MKergall:osmbonuspack:$osm_bonus_version"
+
+    implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
+
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "com.android.support.test:runner:$test_runner_version"
+    androidTestImplementation "com.android.support.test.espresso:espresso-core:$espresso_version"
 }
