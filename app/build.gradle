@@ -37,7 +37,6 @@ android {
 dependencies {
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    implementation "com.android.support:appcompat-v7:$support_lib_version"
 
     implementation "com.android.support:recyclerview-v7:$support_lib_version"
     implementation "com.android.support:appcompat-v7:$support_lib_version"
@@ -45,7 +44,9 @@ dependencies {
     implementation "com.android.support:design:$support_lib_version"
 
     implementation "org.osmdroid:osmdroid-android:$osm_base_version@aar"
-    implementation "com.github.MKergall:osmbonuspack:$osm_bonus_version"
+//    implementation "com.github.MKergall:osmbonuspack:$osm_bonus_version"
+
+    implementation "com.github.fondesa:kpermissions:$kpermissions_version"
 
     implementation "com.android.support.constraint:constraint-layout:$constraint_layout_version"
 

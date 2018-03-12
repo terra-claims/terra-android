@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">TerraDroid</string>
+    <string name="button_allow">Allow</string>
+    <string name="button_deny">Deny</string>
+    <string name="permission_rationale">TerraDroid needs to access your location for core functionality</string>
+    <string name="button_go_there_now">Go there now</string>
+    <string name="button_close_app">Close app</string>
+    <string name="permission_permanently_denied_settings">TerraDroid cannot function without location permissions.\nPlease go to application settings and manually enable location permission.</string>
 </resources>
